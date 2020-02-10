@@ -1,0 +1,6 @@
+{
+    "libraryName": "Vue essentials",
+    "framework": "nuxt",
+    "gitUrl": "//github.com/prismicio/vue-essential-slices",
+    "pathToLibrary": "src"
+}

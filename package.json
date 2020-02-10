@@ -1,0 +1,31 @@
+{
+  "name": "vue-essential-slices",
+  "version": "0.0.1",
+  "description": "A set of professionally made, accessible Vue components, linked to a (Prismic) backend",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "echo \"pre-commit\""
+  },
+  "pre-commit": [
+    "pre-commit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prismicio/vue-essential-slices.git"
+  },
+  "keywords": [
+    "Vuejs",
+    "Prismic",
+    "slices"
+  ],
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/prismicio/vue-essential-slices/issues"
+  },
+  "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
+  "devDependencies": {
+    "pre-commit": "^1.2.2"
+  }
+}
