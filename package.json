@@ -5,16 +5,17 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "node ./node_modules/sm-commons/scripts/bundle"
+    "bundle": "node ./node_modules/sm-commons/scripts/bundle"
   },
   "pre-commit": [
-    "pre-commit"
+    "bundle"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/prismicio/vue-essential-slices.git"
   },
   "keywords": [
+    "Nuxtjs",
     "Vuejs",
     "Prismic",
     "slices"
@@ -27,6 +28,6 @@
   "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
   "devDependencies": {
     "pre-commit": "^1.2.2",
-    "sm-commons": "0.0.8"
+    "sm-commons": "0.0.12"
   }
 }
