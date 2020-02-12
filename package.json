@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pre-commit": "echo \"pre-commit\""
+    "pre-commit": "node ./node_modules/sm-commons/scripts/bundle"
   },
   "pre-commit": [
     "pre-commit"
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
   "devDependencies": {
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "sm-commons": "0.0.8"
   }
 }
