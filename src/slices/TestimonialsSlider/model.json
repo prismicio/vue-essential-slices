@@ -1,7 +1,7 @@
 {
   "type": "Slice",
   "fieldset": "Call to action",
-  "description": "A predesigned 'Call to action' to attract visitor of your site",
+  "description": "A predesigned Call to action to attract visitor of your site",
   "icon": "notifications_active",
   "display": "list",
   "non-repeat": {
