@@ -28,6 +28,6 @@
   "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
   "devDependencies": {
     "pre-commit": "^1.2.2",
-    "sm-commons": "0.0.15-alpha.1"
+    "sm-commons": "0.0.15-alpha.4"
   }
 }
