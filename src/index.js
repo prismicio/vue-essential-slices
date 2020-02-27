@@ -1,4 +1,3 @@
-export * from './slices'
+import './styles/styles.scss'
 
-// In final bundle, this will be elsewhere
-export { default as SliceZone } from './SliceZone'
+export * from './slices'
