@@ -4,8 +4,8 @@
   "gitUrl": "//github.com/prismicio/vue-essential-slices",
   "pathToLibrary": "src",
   "dependencies": [],
-  "css": ["vue-essential-slices"],
-  "script": [{
+  "css": ["vue-essential-slices/src/styles/styles.scss"],
+  "scripts": [{
     "src": "https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"
   }, {
     "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
