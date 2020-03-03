@@ -1,8 +1,14 @@
 {
-    "libraryName": "Vue essentials",
-    "framework": "nuxt",
-    "gitUrl": "//github.com/prismicio/vue-essential-slices",
-    "pathToLibrary": "src",
-    "dependencies": [],
-    "devDependencies": ["node-sass", "sass-loader"]
+  "libraryName": "Vue essentials",
+  "framework": "nuxt",
+  "gitUrl": "//github.com/prismicio/vue-essential-slices",
+  "pathToLibrary": "src",
+  "dependencies": [],
+  "css": ["vue-essential-slices"],
+  "script": [{
+    "src": "https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"
+  }, {
+    "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
+  }],
+  "devDependencies": ["node-sass", "sass-loader"]
 }
