@@ -32,26 +32,26 @@ export default {
 	props: {
 		slice: {
 			validator: function({ slice_type: sliceType, primary, items }) {
-				console.log('primary', primary)
 				return sliceType && primary && items
 			}
 		},
 		darkMode: {
 			type: Boolean,
 			required: false,
-			default: true
+			default: false
 		}
 	},
 	computed: {
-		// temporary
 		darkModeLabel: function() {
-			return true // this.slice && this.slice.slice_label === 'dark_mode'
+			return this.slice && this.slice.slice_label === 'dark_mode'
 		}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+@import "../../styles/styles.scss";
+@import "../../styles/settings.scss";
 .ps-cta {
 	text-align: center;
 }
