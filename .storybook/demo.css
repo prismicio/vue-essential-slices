@@ -1,0 +1,56 @@
+:root {
+  --primary-hue: 167;
+  --secondary-hue: 30;
+  --color--primary: hsl(231, 60%, 70%);
+  --color--primary--dark: hsl(var(--primary-hue), 68%, 27%);
+  --color--primary--darker: hsl(var(--primary-hue), 75%, 21%);
+  --color--secondary: hsl(var(--secondary-hue), 27%, 94%);
+  --color-grey-0: hsl(0, 0%, 0%);
+  --color-grey-20: hsl(0, 0%, 20%);
+  --color-grey-90: hsl(0, 0%, 90%);
+  --color-grey-53: hsl(0, 0%, 53%);
+  --color-text-grey: var(--color-grey-53);
+
+/*
+  hsl(231, 60%, 70%)
+
+  --font-family: "Inter", Arial, sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    --font-family: "Inter var", Arial, sans-serif;
+  }
+
+  --scrollbar: 0;
+
+  --h-padding: 2rem;
+  --c-padding: 1.25rem;
+  --c-margin: 1rem;
+  --v-margin: 2.5rem;
+  --v-space: 8vw;
+
+  @media all and (max-width: 640px) {
+    --h-padding: 1.25rem;
+  }
+
+  --focus-outline: 3px solid currentColor;
+
+
+  --scale--small: 1.125;
+  --scale--large: 1.25;
+
+
+  --text-min-4xl: calc(1 * var(--scale--small) * var(--scale--small) * var(--scale--small) * var(--scale--small) * var(--scale--small));
+  --text-max-4xl: calc(1 * var(--scale--large) * var(--scale--large) * var(--scale--large) * var(--scale--large) * var(--scale--large));
+  --text-min-3xl: calc(1 * var(--scale--small) * var(--scale--small) * var(--scale--small) * var(--scale--small));
+  --text-max-3xl: calc(1 * var(--scale--large) * var(--scale--large) * var(--scale--large) * var(--scale--large));
+  --text-min-2xl: calc(1 * var(--scale--small) * var(--scale--small) * var(--scale--small));
+  --text-max-2xl: calc(1 * var(--scale--large) * var(--scale--large) * var(--scale--large));
+  --text-min-xl: calc(1 * var(--scale--small) * var(--scale--small));
+  --text-max-xl: calc(1 * var(--scale--large) * var(--scale--large));
+  --text-min-l: calc(1 * var(--scale--small));
+  --text-max-l: calc(1 * var(--scale--large));
+  --text-min-small: calc(1 / var(--scale--small));
+  --text-max-small: calc(1 / var(--scale--large));
+
+  */
+}

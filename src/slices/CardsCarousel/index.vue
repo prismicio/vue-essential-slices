@@ -56,6 +56,7 @@ export default {
 			default() {
 				return {
 					items: [],
+					slice_type: 'cards_carousel',
 					primary: {}
 				}
 			}
