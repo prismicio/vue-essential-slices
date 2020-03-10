@@ -7,7 +7,7 @@
     "dev": "start-storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "git clone https://github.com/vuejs/vue-loader temp; rm -rf node_modules/vue-loader; mv temp node_modules/vue-loader",
-    "build-storybook": "npm run prepare && build-storybook -c .storybook",
+    "build-storybook": "npm run prepare && build-storybook -c .storybook && echo '/* /index.html 200' > storybook-static/_redirects",
     "bundle": "node ./node_modules/sm-commons/scripts/bundle"
   },
   "pre-commit": [
