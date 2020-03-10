@@ -1,6 +1,5 @@
 dist
-
-website/custom_types
+storybook-static
 
 # Logs
 logs
