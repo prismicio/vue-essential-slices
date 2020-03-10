@@ -14,7 +14,7 @@ Vue.use(PrismicVue, {
 })
 
 Vue.prototype.$prismic.asText = function(richText) {
-  return (richText && Array.isArray(richText) && richText[0]) ? richText[0].text : 'RichText here'
+  return (richText && Array.isArray(richText) && richText[0]) ? richText[0].text : ''
 }
 
 configure(require.context('../src', true, /\.stories\.js$/), module);

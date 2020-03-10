@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "start-storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build-storybook": "build-storybook -c .storybook",
     "bundle": "node ./node_modules/sm-commons/scripts/bundle"
   },
   "pre-commit": [

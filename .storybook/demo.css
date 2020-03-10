@@ -1,7 +1,7 @@
 :root {
   --primary-hue: 167;
   --secondary-hue: 30;
-  --color--primary: hsl(var(--primary-hue), 66%, 31%);
+  --color--primary: hsl(231, 60%, 70%);
   --color--primary--dark: hsl(var(--primary-hue), 68%, 27%);
   --color--primary--darker: hsl(var(--primary-hue), 75%, 21%);
   --color--secondary: hsl(var(--secondary-hue), 27%, 94%);

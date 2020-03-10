@@ -3,8 +3,6 @@ import mock from './mock.json'
 
 import { withKnobs } from "@storybook/addon-knobs";
 
-console.log('helo!', mock)
-
 export const Default = () => ({
   components: {
     CardsCarousel
