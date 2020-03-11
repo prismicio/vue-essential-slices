@@ -10,12 +10,35 @@ npm install && npm run dev
 ```bash
 npm run prepare
 ````
-Fortunately, this is a temporary ssolition to a temporary bug.
+Fortunately, this is a temporary solution to a temporary bug.
 
 ## Project structure
-In order for this library to become a SliceMachine library, it needs to follow a certain sctructure, that may be accomodated to your requirements but still follows some conditions:
+In order for a folder to become an actual SliceMachine library, it needs to follow a certain sctructure, that may be accomodated to your requirements but still follows some conditions:
 
-#### 1/ sm.config.json
+```bash
+Starter structure:
+├── .storybook # Design guide config
+├── slices # actual components
+│   ├── ComponentName # see "slices" section
+│   ├──  ...
+├── index.js # exports * from './slices'
+├── sm.json # auto-generated, see "bundling" section
+├── sm.config.json # SliceMachine config
+
+```
+#### 1 - slices
+What we call slices are **website sections linked to a Prismic backend**. Basically, you can see them as front-end components that contain a schema (or database definition) to tell Prismic how to create an editor that matches their own state.
+
+Each SM project should contain a non-empty `slices` folder. Each of its subfolder being treated as Slice components by SliceMachine. For this reason they need to be:
+- PascalCased (minimum 2 words starting with capital letters)
+- an `index.[js|ts|vue]` file (the actual component)
+- a `model.json` file, that contains the **slice definition**
+- a `mock.json` file, that contains a valid API response
+- a `preview.png` file, that displays the preview of the component
+
+⚠️ Because this can become overwhelming for library creators, we are thinking about solutions to help you in the process. Fell free to raise an issue if something comes to your mind to solve this with us!
+
+#### 2 - sm.config.json
 A configuration file that helps SliceMachine bundle script understand how it should build the library.
 
 ```json
@@ -34,7 +57,7 @@ A configuration file that helps SliceMachine bundle script understand how it sho
   "devDependencies": ["node-sass", "sass-loader"]
 }
 ````
-`libraryName`, `framework`and `libraryName`are mandatory. Other info (like `pathToLibrary`) help you define where your library actually is. `dependencies`, `css`, `script` and `devDependencies` being information picked up by SliceMachine CLI to kickstart a project.
+`libraryName`, `framework`and `gitUrl` are mandatory. Other info (like `pathToLibrary`) helps SliceMachine bundler to find your slice definitions. `dependencies`, `css`, `script` and `devDependencies` being information picked up by SliceMachine CLI to kickstart a project.
 
 Most of the time, you would be fine with this:
 
@@ -43,84 +66,40 @@ Most of the time, you would be fine with this:
   "libraryName": "Name of your Lib",
   "framework": "nuxt|next",
   "gitUrl": "...",
-  "pathToLibrary": "src" # if not process.cwd()
+  "pathToLibrary": "src" # default to process.cwd()
  }
 ````
 
-#### 2/ Slices folder
-
-What we call slices are **website sections linked to a Prismic backend**. Basically, you can see them as front-end components that contain a schema (or database definition) to tell Prismic how to create an editor that matches their own state.
-
-Each SM project should contain a non-empty `slices` folder. Each of its subfolder being treated as Slice components by SliceMachine. For this reason they need to be:
-- PascalCased (minimum 2 words starting by capital letters)
-- an `index.[js|ts|vue]` file (the actual component)
-- a `model.json` file, that contains the **slice definition**
-- a `mock.json` file, that contains a valid API response
-- a `preview.png` file, that displays the preview of the component
-
-⚠️ Because this can become overwhelming for library creators, we are thinking about solutions to help you in the process. Fell free to raise an issue if something comes to your mind to solve this with us!
-
 ## Bundling
 
-To be discussed. If working with frameworks like Nuxt, being able tp transpile a specific node module could make custom bundling, unnecessary. Today, my guess is: do things like you usually do them. Which means that you should bundle your library as you usually do.
+Everytime you publish your library on NPM, Prismic servers download your library definition file. This definition file is what the writing room uses to select/preview your slices. In order to generate a valid JSON definition for your library, add our `sm-commons` development package and run its bundle script everytime you want to publish a new version of your library:
 
+```bash
+npm i --save-dev sm-commons
+````
 
-## Styling your components
+Then, add this script line to your package.json file (subject to change because I don't know how to make it appear as a bin script 😭) :
 
-At the moment, we enforce the use of css and sass.
+```json
+"scripts": {
+    "bundle": "node ./node_modules/sm-commons/scripts/bundle"
+}
+````
+👆 This script is in active development and subject to lots of change. Make sure you update it as often as possible. A lot of effort will be made to help you understand if and why a folder structure is considered invalid. Feel free [to read the script](https://github.com/prismicio/sm-commons/blob/master/packages/sm-commons/scripts/bundle.js) of course, it's really simple atm.
 
+Here is the structure of our actual SM definition file:
 
-`SCSS` and `CSS` are supported out of the box just import your styles into your component like you normaly would do.
-For the use of  `CSS Modules` refere to [rollup-plugin-postcss](https://github.com/egoist/rollup-plugin-postcss)
+```json
 
-## Publishing your SM library
-Everytime you publish your library over NPM, SliceMachine API fetches your 
+````
 
+### Styling your components
 
+To be discussed.
 
+### Resources
 
+- [StoryBook](https://storybook.js.org/)
+- [SliceMachine packages](https://github.com/prismicio/sm-commons) (including sm-commons and sm-api)
+- [components](https://front-end--prismic-sm.netlify.com/components/detail/call-to-action.html)
 
-## Styleguide
-
-For custom layouts, styleing and more information about the Styleguide please refer to [React Styleguidist](https://react-styleguidist.js.org/) documentation.
-
-#### Deploy the Styleguide to GitHub Pages
-Make sure the repository url in `package.json` file is set to your repoitory url, then:
-
-```
-> yarn deploy
-```
-
-## Scripts
-
-- `yarn dev` : Executes the develop mode, running watcher and the Stylguide, rebuilding your library on every change.
-- `yarn start` : Only serves the Styleguide.
-- `yarn build` : Builds your library  (build can be faound in `dist` folder).
-- `yarn styleguide:build` : Builds the static Styleguide in case you want to deploy it.
-- `yarn test` : Runs the tests.
-- `yarn test:coverage`: Runs the test and shows the coverage.
-- `yarn lint` : Runs the linter.
-- `yarn lint:fix` : Runs the linter and fixes automatic fixable issues.
-- `yarn release` : Publishes your Library on NPM or your private Registry (depending on your config in your `.npmrc` file).
-- `yarn deploy`: Deploys the Styleguide to GitHub Pages.
-
-
-## Resources
-
-### Bundler
-- [Rollup.js](https://rollupjs.org/guide/en)
-
-### Styleguide
-- [React Styleguidist](https://react-styleguidist.js.org/)
-
-### Testing
-- [Jasmine Matchers](https://github.com/JamieMason/Jasmine-Matchers)
-- [Enzyme](http://airbnb.io/enzyme/)
-- [Jest](https://facebook.github.io/jest/)
-
-### Linting
-- [ESLint](https://eslint.org/)
-- [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
-
-### Compiler
-- [Babel 7](https://babeljs.io/)
