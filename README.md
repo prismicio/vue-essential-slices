@@ -90,6 +90,16 @@ Then, add this script line to your package.json file (subject to change because 
 Here is the structure of our actual SM definition file:
 
 ```json
+{
+   "libraryName":"Vue essentials",
+   "framework":"nuxt",
+   "packageName":"vue-essential-slices",
+   "gitUrl":"//github.com/prismicio/vue-essential-slices",
+   "pathToLibrary":"src",
+   "dependencies":[],
+   "css":["vue-essential-slices/src/styles/styles.scss"],
+   "package": {},
+   "slices": { "call_to_action": {} }
 
 ````
 
