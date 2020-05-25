@@ -75,6 +75,18 @@
   }
 }
 
+.ps__desc.right {
+  @media all and (min-width: 800px) {
+    margin-right: 0;
+  }
+}
+
+.ps__desc.left {
+  @media all and (min-width: 800px) {
+    margin-left: 0;
+  }
+}
+
 // when the description is preceded with a heading, add margin between them
 .ps__header + .ps__desc {
   margin-top: calc(var(--v-margin) / 2);

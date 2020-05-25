@@ -1,4 +1,6 @@
-const { create } = require('@storybook/theming/create')
+const {
+  create
+} = require('@storybook/theming/create')
 
 module.exports = create({
   base: 'light',

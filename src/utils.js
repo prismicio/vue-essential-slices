@@ -13,3 +13,19 @@ export const camelize = str => {
 	})
 	return str[0].toUpperCase() + str.slice(1)
 }
+
+export const commonProps = {
+	slice: {
+		validator: function({ slice_type: sliceType, primary, items }) {
+			return sliceType && primary && items
+		}
+	},
+	theme: {
+		type: Object,
+		required: false,
+		default() {
+			console.log('<-- theme is empty -->')
+			return {}
+		}
+	}
+}

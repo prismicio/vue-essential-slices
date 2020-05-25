@@ -1,18 +1,19 @@
 <template>
 	<section
 		:class="`ps ps-video-player ${darkMode ? ' ps-video-player--dark' : ''}`"
+		v-bind="theme.wrapper"
 	>
 		<div class="ps__wrap">
-			<div class="ps__head">
+			<div class="ps__head" :style="theme.align ? `text-align: ${theme.align}` : ''">
 				<header class="ps__header">
-					<span class="ps__kicker">
-						{{ slice.primary.eyebrow_headline }}
+					<span class="ps__kicker" :style="theme.accent ? `color: ${theme.accent}` : ''">
+						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
 					</span>
-					<h2 class="ps__title" aria-level="">
+					<h2 class="ps__title" aria-level="" :style="theme.color ? `color: ${theme.color}` : ''">
 						{{ $prismic.asText(slice.primary.title) }}
 					</h2>
 				</header>
-				<div class="ps__desc">
+				<div :class="`ps__desc ${theme.align || ''}`" :style="theme.color ? `color: ${theme.color}` : ''">
 					<p>
 						{{ $prismic.asText(slice.primary.description) }}
 					</p>
@@ -43,17 +44,17 @@
 									:data-href="item.src.embed_url"
 									:data-index="index"
 									role="tab"
+									:style="theme.color ? `color: ${theme.color}` : ''"
 									@click="selectItem(index)"
 								>
-									{{ item.title }}
+								{{ item.video_title}}
+									{{ $prismic.asText(item.title) }}
 								</a>
 							</li>
 						</ul>
 					</div>
 					<prismic-embed
-						:aria-labelledby="
-							`${currId}__tab-${dataItems.findIndex(e => e.selected)}`
-						"
+						:aria-labelledby="`${currId}__tab-${dataItems.findIndex(e => e.selected)}`"
 						class="ps__video-container span-1-8"
 						:tabindex="videoTabIndex"
 						:field="dataItems.find(e => e.selected).src"
@@ -65,7 +66,6 @@
 	</section>
 </template>
 <script>
-import PrismicEmbed from './prismic-embed'
 const keyCodes = {
 	UP: 38,
 	DOWN: 40,
@@ -81,10 +81,14 @@ const keyCodes = {
 
 export default {
 	name: 'VideoHighlights',
-	components: {
-		PrismicEmbed
-	},
 	props: {
+		theme: {
+			type: Object,
+			required: false,
+			default() {
+				return {}
+			}
+		},
 		slice: {
 			validator: function({ slice_type: sliceType, primary, items }) {
 				return sliceType && primary && items

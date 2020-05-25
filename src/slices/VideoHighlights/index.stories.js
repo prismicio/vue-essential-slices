@@ -1,10 +1,6 @@
 import VideoHighlights from "./index.vue";
 import mock from './mock.json'
 
-import {
-  withKnobs
-} from "@storybook/addon-knobs";
-
 export const Default = () => ({
   components: {
     VideoHighlights

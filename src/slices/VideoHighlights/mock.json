@@ -3,7 +3,13 @@
 	"slice_label": null,
 	"items": [
 		{
-			"video_title": "Single Page Apps - Fat frontend or fat backend, not both",
+			"video_title": [
+				{
+					"type": "paragraph",
+					"text": "Single Page Apps - Fat frontend or fat backend, not both",
+					"spans": []
+				}
+			],
 			"video_src": {
 				"type": "video",
 				"thumbnail_height": 360,
@@ -22,7 +28,13 @@
 			}
 		},
 		{
-			"video_title": "Journey to JavaScript development",
+			"video_title": [
+				{
+					"type": "paragraph",
+					"text": "Journey to JavaScript development",
+					"spans": []
+				}
+			],
 			"video_src": {
 				"thumbnail_height": 360,
 				"thumbnail_url": "https://i.ytimg.com/vi/62C-E6WL0_A/hqdefault.jpg",
@@ -41,7 +53,13 @@
 			}
 		},
 		{
-			"video_title": "So many frameworks out there?",
+			"video_title": [
+				{
+					"type": "paragraph",
+					"text": "So many frameworks out there?",
+					"spans": []
+				}
+			],
 			"video_src": {
 				"version": "1.0",
 				"author_name": "Prismic",

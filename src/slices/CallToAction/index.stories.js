@@ -1,25 +1,14 @@
 import CallToAction from "./index.vue";
 import mock from './mock.json'
 
+import { formatThemeProps } from 'vue-slicezone/theme.js'
+
 import {
   withKnobs,
   object,
   select,
   boolean
 } from "@storybook/addon-knobs";
-
-const handledAddonProperties = {
-  object(key, value, groupId) {
-    return object(key, value.type(), groupId)
-  },
-  select,
-  boolean(key, value, groupId) {
-    return boolean(key, value.type(), groupId);
-  },
-}
-
-const developerProps = Object.entries(CallToAction.props)
-  .filter(([key, _]) => key !== 'slice')
 
 const groups = {
   writer: 'Content',
@@ -38,11 +27,6 @@ const titleDefaultValue = [{
   "spans": []
 }];
 
-const options = {
-  None: null,
-  DarkMode: 'dark_mode'
-};
-
 export const Default = () => ({
   components: { CallToAction },
   props: {
@@ -50,7 +34,6 @@ export const Default = () => ({
       type: Object,
       default: {
         ...mock,
-        slice_label: select('Label', options, 'dark_mode', groups.writer),
         primary: {
           ...mock.primary,
           title: object('Title', titleDefaultValue, groups.writer),
@@ -58,15 +41,56 @@ export const Default = () => ({
         }
       }
     },
-    ...(developerProps.reduce((acc, [key, value]) => {
-      const maybeFunc = handledAddonProperties[value.type.name.toLowerCase()]
-      if (maybeFunc) {
-        acc[key] = maybeFunc(key, value, groups.dev)
-      }
-    }, {}))
   },
   template: `<call-to-action :slice="slice" />`
 });
+
+console.log({
+  formatThemeProps,
+  res: formatThemeProps({
+    wrapper: {
+      style: 'background: tomato'
+    }
+  }, {
+    i: 0
+  })
+});
+
+export const WithCustomTheme = () => ({
+  components: {
+    CallToAction
+  },
+  props: {
+    slice: {
+      type: Object,
+      default: {
+        ...mock,
+        primary: {
+          ...mock.primary,
+          title: object('Title', titleDefaultValue, groups.writer),
+          paragraph: object('Paragraph', paraDefaultValue, groups.writer),
+        }
+      }
+    },
+    theme: {
+      default () {
+        return formatThemeProps({
+          align: 'left',
+          button: {
+            style: 'background: #FFF;color: #111'
+          },
+          wrapper: {
+            style: 'background: tomato'
+          }
+        }, {
+          i: 0
+        })
+      }
+    }
+  },
+  template: `<call-to-action :slice="slice" :theme="theme" />`
+});
+
 
 export const NoImage = () => ({
   components: {
@@ -85,14 +109,29 @@ export const NoImage = () => ({
          }
        }
      },
-     ...(developerProps.reduce((acc, [key, value]) => {
-       const maybeFunc = handledAddonProperties[value.type.name.toLowerCase()]
-       if (maybeFunc) {
-         acc[key] = maybeFunc(key, value, groups.dev)
-       }
-     }, {}))
   },
   template: `<call-to-action :slice="slice" />`
+});
+
+export const DarkMode = () => ({
+  components: {
+    CallToAction
+  },
+  props: {
+    slice: {
+      type: Object,
+      default: {
+        ...mock,
+        primary: {
+          ...mock.primary,
+          title: object('Title', titleDefaultValue, groups.writer),
+          paragraph: object('Paragraph', paraDefaultValue, groups.writer),
+        }
+      }
+    },
+    darkMode: true,
+  },
+  template: `<call-to-action :slice="slice" darkMode />`
 });
 
 export default {

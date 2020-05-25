@@ -91,3 +91,6 @@ typings/
 .dynamodb/
 
 .DS_*
+
+# Local Netlify folder
+.netlify

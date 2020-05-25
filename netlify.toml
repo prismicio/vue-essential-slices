@@ -1,4 +1,4 @@
 [build]
   base = "/"
-  command = "yarn run build-storybook"
+  command = "npm run build-storybook"
   publish = "storybook-static"

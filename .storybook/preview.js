@@ -3,7 +3,7 @@ import { configure, getStorybook } from '@storybook/vue';
 import PrismicVue from 'prismic-vue'
 
 import "../src/styles/styles.scss"
-import "./demo.css"
+// import "./demo.css"
 
 Vue.use(PrismicVue, {
   endpoint: 'https://your-api-endpoint.prismic.io/api/v2',

@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "start-storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "git clone https://github.com/vuejs/vue-loader temp; rm -rf node_modules/vue-loader; mv temp node_modules/vue-loader",
-    "build-storybook": "npm run prepare && build-storybook -c .storybook",
-    "bundle": "node ./node_modules/sm-commons/scripts/bundle"
+    "build-storybook": "build-storybook",
+    "bundle": "node ./node_modules/sm-commons/scripts/bundle",
+    "storybook": "start-storybook -p 6006"
   },
   "pre-commit": [
     "bundle"
@@ -30,16 +30,19 @@
   },
   "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@storybook/addon-docs": "^6.0.0-alpha.21",
-    "@storybook/addon-knobs": "^6.0.0-alpha.21",
-    "@storybook/source-loader": "^6.0.0-alpha.21",
-    "@storybook/vue": "^6.0.0-alpha.21",
+    "@babel/core": "^7.9.6",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/source-loader": "^5.3.19",
+    "@storybook/vue": "^5.3.18",
     "@vue/babel-preset-app": "^4.2.3",
     "@vue/component-compiler-utils": "^3.1.1",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "pre-commit": "^1.2.2",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
@@ -48,7 +51,8 @@
     "sm-commons": "0.0.15-alpha.4",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
-    "vue-loader": "^16.0.0-alpha.3",
+    "vue-loader": "^15.9.2",
+    "vue-slicezone": "^0.0.25",
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {}
