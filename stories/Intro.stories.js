@@ -31,7 +31,7 @@ export const Wip = () => ({
       </ps-description>
       <ps-description align="left" style="margin-top: 1em">
         The easiest way to get started is by following the Getting started <a target="_blank" href="https://www.slicemachine.dev/documentation/getting-started">here</a>
-        but you're more of an adventurer, create a fresh Nuxt project and run this command in your CLI:
+        but if you're more of an adventurer, create a fresh Nuxt project and run this command in your CLI:
       </ps-description>
       <ps-description align="left" style="background:#F7F7F7;margin-top:1em;padding: 12px">
         $> npx prismic-cli sm --setup
