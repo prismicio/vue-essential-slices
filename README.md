@@ -38,16 +38,16 @@ If you've correctly setup a SliceMachine project and created a page of uid "home
 
 At the moment of writing, manual installation is not advised, as Prismic does not offer a simple way to update Slice models to your own Prismic writing room. But if you want to get a better understanding of what the Prismic CLI does for you, this is how you could manually install these slices:
 
-#### 1/
-Create a repeatable Custom Type of type "Page" in your Prismic writing room. Then click on "Add a SliceZone". The JSON viewer should show you an empty "choices" object there.
+#### 1/ Create a custom type on Prismic
+1/ Create a repeatable Custom Type of type "Page" in your Prismic writing room. Then click on "Add a SliceZone". The JSON viewer should show you an empty "choices" object there.
 
-#### 2/
+#### 2/ Copy-paste the slices models
  Open our `sm.json` file and find the "slices" key. Copy-paste this part of the file (the object inside the "slice" key, without the key itself) and copy-paste it inside the "choices" object of the JSON viewer.
 
-#### 3/
+#### 3/ Create a first page on Prismic
 The UI should now display all the slices forms. Now, go to your Prismic documents, create a first page, and give it a uid "homepage".
 
-#### 3/
+#### 4/ Create a first page in Nuxt
  Now, run `yarn add vue-slicezone vue-essential-slices`, create a first page in Nuxt and query your Prismic API:
 
 ```javascript
