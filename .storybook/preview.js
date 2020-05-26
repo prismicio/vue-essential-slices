@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { configure, getStorybook } from '@storybook/vue';
+import { configure } from '@storybook/vue';
 import PrismicVue from 'prismic-vue'
 
 import "../src/styles/styles.scss"
@@ -17,4 +17,4 @@ Vue.prototype.$prismic.asText = function(richText) {
   return (richText && Array.isArray(richText) && richText[0]) ? richText[0].text : ''
 }
 
-configure(require.context('../src', true, /\.stories\.js$/), module);
+configure(require.context('../stories', true, /\.stories\.js$/), module);

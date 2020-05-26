@@ -77,12 +77,14 @@
 
 .ps__desc.right {
   @media all and (min-width: 800px) {
+    text-align: right;
     margin-right: 0;
   }
 }
 
 .ps__desc.left {
   @media all and (min-width: 800px) {
+    text-align: left;
     margin-left: 0;
   }
 }

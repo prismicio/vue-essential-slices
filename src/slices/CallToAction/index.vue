@@ -1,6 +1,7 @@
 <template>
-	<section
-		:class="`ps${(darkMode || darkModeLabel) ? ' ps--black' : ''} ps-cta`"
+	<ps-section
+		:darkMode="darkMode || darkModeLabel"
+		classAttr="ps-cta"
 		v-bind="theme.wrapper"
 	>
 		<div class="ps__wrap">
@@ -13,41 +14,44 @@
 							class="ps__kicker-icon"
 							:field="slice.primary.icon_image"
 						/>
-						<h2
-							v-if="slice.primary.title"
-							class="ps__title"
-							:style="theme.color ? `color: ${theme.color}` : ''"
-						>
+						<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
 							{{ $prismic.asText(slice.primary.title) }}
-						</h2>
+						</ps-title>
 					</slot>
 				</header>
-				<div
-					v-if="slice.primary.paragraph"
-					:class="`ps__desc ${theme.align || ''}`"
-					:style="theme.color ? `color: ${theme.color}` : ''"
-				>
-					<p>{{ $prismic.asText(slice.primary.paragraph) }}</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.paragraph) }}
+				</ps-description>
 				<slot name="cta" v-bind="slice.primary">
-					<prismic-link
-						v-bind="theme.button"
-						class="ps-button ps-button--primary"
-						:field="slice.primary.button_link"
+					<ps-button
+						:theme="theme.button"
+						:link="slice.primary.button_link"
 					>
 						{{ slice.primary.button_label }}
-					</prismic-link>
+					</ps-button>
 				</slot>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
-
 import { commonProps } from '../../utils'
+
+import {
+	PsButton,
+	PsSection,
+	PsTitle,
+	PsDescription
+} from '../../components'
 
 export default {
 	name: 'CallToAction',
+	components: {
+		PsButton,
+		PsSection,
+		PsTitle,
+		PsDescription
+	},
 	props: {
 		...commonProps,
 		darkMode: {

@@ -1,11 +1,14 @@
 <template>
-	<section class="ps ps--beige ps-customer-logos">
+	<ps-section
+		classAttr="ps--beige ps-customer-logos"
+		v-bind="theme.wrapper"
+	>
 		<div class="ps__wrap">
 			<div class="ps__head">
 				<header class="ps__header">
-					<span v-if="slice.primary.eyebrow_headline" class="ps__kicker">
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
-					</span>
+					</ps-eyebrow>
 				</header>
 			</div>
 			<div class="ps__main">
@@ -33,29 +36,28 @@
 					v-if="slice.primary.call_to_action_link"
 					:field="slice.primary.call_to_action_link"
 					class="ps-customer-logos__link"
+					:style="theme.color ? `color: ${theme.color}` : ''"
+					v-bind="theme.link"
 				>
 					{{ $prismic.asText(slice.primary.call_to_action) }}
 				</prismic-link>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
+import {
+	PsSection,
+	PsEyebrow
+} from '../../components'
+import { commonProps } from '../../utils'
 export default {
 	name: 'CustomerLogos',
-	props: {
-		slice: {
-			validator: function({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default: function() {
-				return {
-					items: [],
-					primary: {}
-				}
-			}
-		}
-	}
+	components: {
+		PsSection,
+		PsEyebrow
+	},
+	props: commonProps
 }
 </script>
 <style lang="scss" scoped>

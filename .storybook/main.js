@@ -8,7 +8,7 @@ const filterRules = filters => rule => {
 
 module.exports = {
   theme,
-  stories: ['../src/slices/**/*.stories.js'],
+  stories: ['../stories/**/*.stories.js', '../src/slices/**/*.stories.js'],
   addons: ['@storybook/addon-knobs', '@storybook/addon-docs/'],
   webpackFinal(config) {
     //add addon-storysource

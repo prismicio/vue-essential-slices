@@ -1,23 +1,22 @@
 <template>
-	<section
-		:class="`ps ps-video-player ${darkMode ? ' ps-video-player--dark' : ''}`"
+	<ps-section
+		:darkMode="darkMode"
+		classAttr="ps-video-player"
 		v-bind="theme.wrapper"
 	>
 		<div class="ps__wrap">
 			<div class="ps__head" :style="theme.align ? `text-align: ${theme.align}` : ''">
 				<header class="ps__header">
-					<span class="ps__kicker" :style="theme.accent ? `color: ${theme.accent}` : ''">
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
-					</span>
-					<h2 class="ps__title" aria-level="" :style="theme.color ? `color: ${theme.color}` : ''">
+					</ps-eyebrow>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.title) }}
-					</h2>
+					</ps-title>
 				</header>
-				<div :class="`ps__desc ${theme.align || ''}`" :style="theme.color ? `color: ${theme.color}` : ''">
-					<p>
-						{{ $prismic.asText(slice.primary.description) }}
-					</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.description) }}
+				</ps-description>
 			</div>
 			<div class="ps__main" v-if="dataItems.length">
 				<div :id="currId" class="ps__video-player" data-video-player>
@@ -63,9 +62,17 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
+import { commonProps } from '../../utils'
+import {
+	PsSection,
+	PsEyebrow,
+	PsDescription,
+	PsTitle,
+} from '../../components'
+
 const keyCodes = {
 	UP: 38,
 	DOWN: 40,
@@ -81,26 +88,13 @@ const keyCodes = {
 
 export default {
 	name: 'VideoHighlights',
-	props: {
-		theme: {
-			type: Object,
-			required: false,
-			default() {
-				return {}
-			}
-		},
-		slice: {
-			validator: function({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default: function() {
-				return {
-					items: [],
-					primary: {}
-				}
-			}
-		}
+	components: {
+		PsSection,
+		PsEyebrow,
+		PsDescription,
+		PsTitle,
 	},
+	props: commonProps,
 	data() {
 		return {
 			videoTabIndex: '-1',
@@ -115,9 +109,6 @@ export default {
 		currId() {
 			return `ps__video-player-${Math.floor(Math.random() * 999)}`
 		},
-		darkMode() {
-			return this.slice && this.slice.slice_label === 'dark_mode'
-		}
 	},
 	methods: {
 		selectItem(index) {

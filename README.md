@@ -1,16 +1,44 @@
-# Getting started
+# Vue Essential Slices
 
-Running Storybook is probably the best way to get started with the components.
-After cloning this repository, run:
+A set of responsive, accessible, and customizable website sections (think Hero, Faq...),
+connected to a ([Prismic.io](https://prismic.io)) backend. You most probably want to use this with [SliceMachine](https://slicemachine.dev)!
+
+Components can be viewed on our Storybook: https://vue-essential-slices.netlify.com.
+Note that it's pretty much a WIP as we need to add docs for each component there.
+
+
+
+## Getting started (WIP)
+
+The easiest way to get started with vue-essential-slices is to follow the [Getting started](https://www.slicemachine.dev/documentation/getting-started) of SliceMachine:
 
 ```bash
-npm install && npm run dev
+npx create-nuxt-app my-app && cd my-app;
+npx prismic-cli sm --setup;
 ````
-👇 if you get an error that states that `vue-loader/lib/plugin` does not exist, you'll need an extra-step:
-```bash
-npm run prepare
+👆 Because vue-essential-slices is the default library of SliceMachine, Your project should now be configured to use it. Your next step would be to declare a `slice-zone` in one of your pages:
+
+```javascript
+<template>
+  <slice-zone
+    type="page"
+    uid="homepage"
+  />
+</template>
+<script>
+import SliceZone from 'vue-slicezone'
+
+export default {
+  components: {
+    SliceZone
+  },
+}
+</script>
 ````
-Fortunately, this is a temporary solution to a temporary bug.
+If you've correctly setup a SliceMachine project and created a page of uid "homepage" on your Prismic writing room, your page should now render a full landing page. If you're unsure why or how this works, please refer to SliceMachien documentation or refer to the [sliceZone README](https://github.com/prismicio/sm-commons/tree/master/packages/vue-slicezone) ✌️
+
+
+
 
 ## Project structure
 In order for a folder to become an actual SliceMachine library, it needs to follow a certain sctructure, that may be accomodated to your requirements but still follows some conditions:
@@ -66,7 +94,7 @@ Most of the time, you would be fine with this:
   "libraryName": "Name of your Lib",
   "framework": "nuxt|next",
   "gitUrl": "...",
-  "pathToLibrary": "src" # default to process.cwd()
+  "pathToLibrary": "src"
  }
 ````
 
@@ -78,7 +106,7 @@ Everytime you publish your library on NPM, Prismic servers download your library
 npm i --save-dev sm-commons
 ````
 
-Then, add this script line to your package.json file (subject to change because I don't know how to make it appear as a bin script 😭) :
+Then, add this script line to your package.json file (subject to change) :
 
 ```json
 "scripts": {

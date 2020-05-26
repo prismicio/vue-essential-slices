@@ -3,57 +3,15 @@ import mock from './mock.json'
 
 import { formatThemeProps } from 'vue-slicezone/theme.js'
 
-import {
-  withKnobs,
-  object,
-  select,
-  boolean
-} from "@storybook/addon-knobs";
-
-const groups = {
-  writer: 'Content',
-  dev: 'Props',
-}
-
-const paraDefaultValue = [{
-  "type": "paragraph",
-  "text": "It’s very easy to create stylish and beautiful prototypes for your future projects, both graphical and dynamic.",
-  "spans": []
-}];
-
-const titleDefaultValue = [{
-  "type": "paragraph",
-  "text": "Collector Slices kit",
-  "spans": []
-}];
-
 export const Default = () => ({
   components: { CallToAction },
   props: {
     slice: {
       type: Object,
-      default: {
-        ...mock,
-        primary: {
-          ...mock.primary,
-          title: object('Title', titleDefaultValue, groups.writer),
-          paragraph: object('Paragraph', paraDefaultValue, groups.writer)
-        }
-      }
+      default: mock
     },
   },
   template: `<call-to-action :slice="slice" />`
-});
-
-console.log({
-  formatThemeProps,
-  res: formatThemeProps({
-    wrapper: {
-      style: 'background: tomato'
-    }
-  }, {
-    i: 0
-  })
 });
 
 export const WithCustomTheme = () => ({
@@ -63,13 +21,8 @@ export const WithCustomTheme = () => ({
   props: {
     slice: {
       type: Object,
-      default: {
-        ...mock,
-        primary: {
-          ...mock.primary,
-          title: object('Title', titleDefaultValue, groups.writer),
-          paragraph: object('Paragraph', paraDefaultValue, groups.writer),
-        }
+      default() {
+        return mock
       }
     },
     theme: {
@@ -103,8 +56,6 @@ export const NoImage = () => ({
          ...mock,
          primary: {
            ...mock.primary,
-           title: object('Title', titleDefaultValue, groups.writer),
-           paragraph: object('Paragraph', paraDefaultValue, groups.writer),
            icon_image: null
          }
        }
@@ -120,13 +71,8 @@ export const DarkMode = () => ({
   props: {
     slice: {
       type: Object,
-      default: {
-        ...mock,
-        primary: {
-          ...mock.primary,
-          title: object('Title', titleDefaultValue, groups.writer),
-          paragraph: object('Paragraph', paraDefaultValue, groups.writer),
-        }
+      default () {
+        return mock
       }
     },
     darkMode: true,
@@ -135,6 +81,5 @@ export const DarkMode = () => ({
 });
 
 export default {
-  title: "Call To Action",
-  decorators: [withKnobs]
+  title: "CallToAction",
 };

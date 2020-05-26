@@ -1,20 +1,18 @@
 <template>
-	<section class="ps ps-accordion ps-accordion--faq">
+	<ps-section v-bind="theme.wrapper" classAttr="ps-accordion ps-accordion--faq">
 		<div class="ps__wrap">
 			<div class="ps__head">
 				<header class="ps__header">
-					<span v-if="slice.primary.eyebrow_headline" class="ps__kicker">
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
-					</span>
-					<h2 v-if="slice.primary.title" class="ps__title" aria-level="2">
+					</ps-eyebrow>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.title) }}
-					</h2>
+					</ps-title>
 				</header>
-				<div v-if="slice.primary.description" class="ps__desc">
-					<p>
-						{{ $prismic.asText(slice.primary.description) }}
-					</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.description) }}
+				</ps-description>
 			</div>
 			<div class="ps__main grid grid--12">
 				<div v-if="hasImage" class="span-1-6">
@@ -27,31 +25,29 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
-import Vue from 'vue'
+import {
+	PsEyebrow,
+	PsDescription,
+	PsTitle,
+	PsSection,
+	PsAccordion
+} from '../../components'
 
-const components = {}
-if (!Vue.options.components['ps-accordion']) {
-	components['ps-accordion'] = () => import('../../components/PsAccordion')
-}
+import { commonProps } from '../../utils'
+
 export default {
 	name: 'FaqSection',
-	components,
-	props: {
-		slice: {
-			validator: function({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default: function() {
-				return {
-					items: [],
-					primary: {}
-				}
-			}
-		}
+	components: {
+		PsEyebrow,
+		PsDescription,
+		PsTitle,
+		PsSection,
+		PsAccordion
 	},
+	props: commonProps,
 	computed: {
 		hasImage() {
 			return (

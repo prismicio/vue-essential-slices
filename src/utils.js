@@ -14,6 +14,14 @@ export const camelize = str => {
 	return str[0].toUpperCase() + str.slice(1)
 }
 
+export const computeProp =
+	(propName)=> (props) => Object.keys(props.theme).length ? props.theme[propName] : props[propName]
+
+export const createComputedProps = (...args) => args.reduce((acc, propName) => ({
+	...acc,
+	[`applied${propName.charAt(0).toUpperCase()}${propName.slice(1)}`]: computeProp(propName)
+}), {})
+
 export const commonProps = {
 	slice: {
 		validator: function({ slice_type: sliceType, primary, items }) {
@@ -24,8 +32,12 @@ export const commonProps = {
 		type: Object,
 		required: false,
 		default() {
-			console.log('<-- theme is empty -->')
 			return {}
 		}
+	},
+	darkMode: {
+		type: Boolean,
+		required: false,
+		default: false
 	}
 }

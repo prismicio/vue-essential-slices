@@ -1,18 +1,18 @@
 <template>
-	<section class="ps ps-pricing-table">
+	<ps-section v-bind="theme.wrapper" classAttr="ps-pricing-table">
 		<div class="ps__wrap">
 			<div class="ps__head">
 				<header class="ps__header">
-					<span v-if="slice.primary.eyebrow_headline" class="ps__kicker">
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
-					</span>
-					<h2 v-if="slice.primary.title" class="ps__title" aria-level="2">
+					</ps-eyebrow>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.title) }}
-					</h2>
+					</ps-title>
 				</header>
-				<div v-if="slice.primary.description" class="ps__desc">
-					<p>{{ $prismic.asText(slice.primary.description) }}</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.description) }}
+				</ps-description>
 			</div>
 			<div class="ps__main">
 				<ol
@@ -49,37 +49,44 @@
 								"
 								class="ps__card-item__cta"
 							>
-								<prismic-link
-									:field="item.call_to_action"
-									class="ps-button ps-button--secondary"
-									>{{ $prismic.asText(item.call_to_action_text) }}</prismic-link
+								<ps-button
+									secondary
+									:theme="theme.button"
+									:link="item.call_to_action"
 								>
+									{{ $prismic.asText(item.call_to_action_text) }}
+								</ps-button>
 							</div>
 						</article>
 					</li>
 				</ol>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
+import { commonProps } from '../../utils'
+
+import {
+	PsButton,
+	PsSection,
+	PsEyebrow,
+	PsDescription,
+	PsTitle,
+} from '../../components'
+
 import { featureIcon, notIncludedIcon } from './icons'
 
 export default {
 	name: 'PricingTable',
-	props: {
-		slice: {
-			validator({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default() {
-				return {
-					items: [],
-					primary: {}
-				}
-			}
-		}
+	components: {
+		PsButton,
+		PsSection,
+		PsEyebrow,
+		PsDescription,
+		PsTitle,
 	},
+	props: commonProps,
 	methods: {
 		listSerializer(type, props, _, children) {
 			if (type === 'list-item') {

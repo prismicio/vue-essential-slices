@@ -82,6 +82,7 @@
 	</div>
 </template>
 <script>
+import { commonProps } from '../../utils'
 const keyCodes = {
 	UP: 38,
 	DOWN: 40,
@@ -127,7 +128,8 @@ export default {
 			validator: function(value) {
 				return ['card', 'testimonial', 'slide'].indexOf(value) !== -1
 			}
-		}
+		},
+		theme: commonProps.theme
 	},
 	data() {
 		return {
@@ -507,12 +509,12 @@ h3 {
 
 	-webkit-overflow-scrolling: touch;
 
-	background: linear-gradient(90deg, #fff 30%, rgba(255, 255, 255, 0)),
-		linear-gradient(90deg, rgba(255, 255, 255, 0), #fff 70%) 0 100%,
-		radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.25), transparent),
-		radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.25), transparent)
-			0 100%;
-	background-color: #fff;
+	// background: linear-gradient(90deg, #fff 30%, rgba(255, 255, 255, 0)),
+	// 	linear-gradient(90deg, rgba(255, 255, 255, 0), #fff 70%) 0 100%,
+	// 	radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.25), transparent),
+	// 	radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.25), transparent)
+	// 		0 100%;
+	background-color: transparent;
 	background-position: 0 0, 100%, 0 0, 100%;
 	background-repeat: no-repeat;
 	background-attachment: local, local, scroll, scroll;

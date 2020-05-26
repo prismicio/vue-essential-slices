@@ -1,25 +1,22 @@
 <template>
-	<section class="ps ps-slider ps-slider--images">
+	<ps-section v-bind="theme.wrapper" classAttr="ps-slider ps-slider--images">
 		<div class="ps__wrap">
 			<div class="ps__head">
 				<header class="ps__header">
-					<span
-						v-if="slice.primary.eyebrow_headline"
-						class="ps__kicker"
-					>{{ $prismic.asText(slice.primary.eyebrow_headline) }}</span>
-					<h2
-						v-if="slice.primary.title"
-						class="ps__title"
-						aria-level="2"
-					>{{ $prismic.asText(slice.primary.title) }}</h2>
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
+						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
+					</ps-eyebrow>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
+						{{ $prismic.asText(slice.primary.title) }}
+					</ps-title>
 				</header>
-				<div v-if="slice.primary.description" class="ps__desc">
-					<p>{{ $prismic.asText(slice.primary.description) }}</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.description) }}
+				</ps-description>
 			</div>
 			<div v-if="slice.items.length" class="ps__main grid grid--12">
 				<div class="span-1-12">
-					<ps-slider hide-arrows type="slider" item-type="slide" :items="slice.items">
+					<ps-slider :theme="theme.slider" hide-arrows type="slider" item-type="slide" :items="slice.items">
 						<template v-slot:content>
 							<div
 								:data-slide-label="$prismic.asText(item.description)"
@@ -36,7 +33,9 @@
 									:aria-label="$prismic.asText(item.description)"
 								>
 									<prismic-image class="c-slider__slide__img" :field="item.image" />
-									<figcaption>{{ $prismic.asText(item.description) }}</figcaption>
+									<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+										<figcaption>{{ $prismic.asText(item.description) }}</figcaption>
+									</ps-description>
 								</figure>
 							</div>
 						</template>
@@ -44,28 +43,28 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</ps-section>
 </template>
 <script>
-import PsSlider from '../../components/PsSlider'
+import {
+	PsEyebrow,
+	PsDescription,
+	PsTitle,
+	PsSection,
+	PsSlider
+} from '../../components'
+
+import { commonProps } from '../../utils'
 export default {
 	name: 'ImagesSlider',
 	components: {
+		PsEyebrow,
+		PsDescription,
+		PsTitle,
+		PsSection,
 		PsSlider
 	},
-	props: {
-		slice: {
-			validator({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default() {
-				return {
-					items: [],
-					primary: {}
-				}
-			}
-		}
-	}
+	props: commonProps
 }
 </script>
 
