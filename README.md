@@ -191,7 +191,7 @@ Most of the time, you would be fine with this:
   "libraryName": "Name of your Lib",
   "framework": "nuxt|next",
   "gitUrl": "...",
-  "pathToLibrary": "src" # default to process.cwd()
+  "pathToLibrary": "src"
  }
 ````
 
