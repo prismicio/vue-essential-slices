@@ -3,19 +3,16 @@
 		<div class="ps__wrap">
 			<div class="ps__head">
 				<header class="ps__header">
-					<span
-						v-if="slice.primary.eyebrow_headline"
-						class="ps__kicker"
-					>{{ $prismic.asText(slice.primary.eyebrow_headline) }}</span>
-					<h2
-						v-if="slice.primary.title"
-						class="ps__title"
-						aria-level="2"
-					>{{ $prismic.asText(slice.primary.title) }}</h2>
+					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
+						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
+					</ps-eyebrow>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
+						{{ $prismic.asText(slice.primary.title) }}
+					</ps-title>
 				</header>
-				<div v-if="slice.primary.description" class="ps__desc">
-					<p>{{ $prismic.asText(slice.primary.description) }}</p>
-				</div>
+				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
+					{{ $prismic.asText(slice.primary.paragraph) }}
+				</ps-description>
 			</div>
 			<div v-if="slice.items.length" class="ps__main grid grid--12">
 				<div class="span-1-12">
@@ -55,31 +52,26 @@
 	</section>
 </template>
 <script>
-import PsSlider from '../../components/PsSlider'
+import { commonProps } from '../../utils'
+
+import {
+	PsEyebrow,
+	PsSection,
+	PsTitle,
+	PsDescription,
+	PsSlider
+} from '../../components'
+
 export default {
 	name: 'TestimonialsSlider',
 	components: {
+		PsEyebrow,
+		PsSection,
+		PsTitle,
+		PsDescription,
 		PsSlider
 	},
-	props: {
-		slice: {
-			validator({ slice_type: sliceType, primary, items }) {
-				return sliceType && primary && items
-			},
-			default() {
-				return {
-					items: [],
-					primary: {},
-					type: 'carousel'
-				}
-			}
-		}
-	},
-	computed: {
-		darkMode() {
-			return this.slice && this.slice.slice_label === 'dark_mode'
-		}
-	}
+	props: commonProps,
 }
 </script>
 

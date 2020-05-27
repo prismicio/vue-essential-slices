@@ -1,16 +1,16 @@
 {
   "type": "Slice",
   "fieldset": "Testimonials Slider",
-  "description": "A predesigned Call to action to attract visitor of your site",
+  "description": "A predesigned Slider with rich testimonial",
   "icon": "notifications_active",
   "display": "list",
   "non-repeat": {
-    "icon_image": {
-      "type": "Image",
+    "eyebrow_headline": {
+      "type": "StructuredText",
       "config": {
-        "constraint": {},
-        "thumbnails": [],
-        "label": "Icon Image"
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Eyebrow headline"
       }
     },
     "title": {
@@ -41,5 +41,35 @@
       }
     }
   },
-  "repeat": {}
+  "repeat": {
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "image"
+      }
+    },
+    "testimonial": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "label": "testimonial"
+      }
+    },
+    "person": {
+      "type": "Text",
+      "config": {
+        "label": "person",
+        "placeholder": "Their full name"
+      }
+    },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "title",
+        "placeholder": "Their title"
+      }
+    }
+  }
 }
