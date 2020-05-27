@@ -1,6 +1,6 @@
 {
   "name": "vue-essential-slices",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of professionally made, accessible Vue components, linked to a (Prismic) backend",
   "main": "src/index.js",
   "scripts": {
