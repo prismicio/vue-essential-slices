@@ -100,7 +100,7 @@ For example, this is how you would use the theme prop in a SliceMachine project:
 
 ```javascript
 <template>
-  <slice-zone type="page" uid="homepage" />
+  <slice-zone type="page" uid="homepage" :theme="theme" />
 </template>
 
 <script>
@@ -124,7 +124,12 @@ const theme = {
 
 export default {
   components: {
-    SliceZone
+    SliceZone,
+    data(){
+      return {
+        theme
+      }
+    }
   },
 }
 </script>
