@@ -1,0 +1,112 @@
+{
+  "slice_type": "alternate_grid",
+  "slice_label": null,
+  "items": [{
+    "optional_icon": {
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.io/repoz/0b72eb6f-1824-4891-914a-c43fdee5b893_running.png?auto=compress,format"
+    },
+    "title": [{
+      "type": "heading3",
+      "text": "Integrate with the SliceZone",
+      "spans": []
+    }],
+    "description": [{
+      "type": "paragraph",
+      "text": "This component has been matched by the SliceZone. Its model has been fetched from vue-essential-slices.",
+      "spans": []
+    }]
+  }, {
+    "optional_icon": {
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.io/repoz/b9b0d289-a1df-4067-a8b8-593bc3752c20_dog-jump.png?auto=compress,format"
+    },
+    "title": [{
+      "type": "heading3",
+      "text": "Add icons if required",
+      "spans": []
+    }],
+    "description": [{
+      "type": "paragraph",
+      "text": "This component has been matched by the SliceZone. Its model has been fetched from vue-essential-slices.",
+      "spans": []
+    }]
+  }, {
+    "optional_icon": {
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.io/repoz/60377285-4f61-4500-b342-224f4715ec35_moshing.png?auto=compress,format"
+    },
+    "title": [{
+      "type": "heading3",
+      "text": "Add a custom theme",
+      "spans": []
+    }],
+    "description": [{
+      "type": "paragraph",
+      "text": "This component has been matched by the SliceZone. Its model has been fetched from vue-essential-slices.",
+      "spans": []
+    }]
+  }, {
+    "optional_icon": {
+      "dimensions": {
+        "width": 2048,
+        "height": 1536
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.io/repoz/c7b4408a-84f5-42f2-bd10-39785b66fbb1_laying.png?auto=compress,format"
+    },
+    "title": [{
+      "type": "heading3",
+      "text": "Create your own",
+      "spans": []
+    }],
+    "description": [{
+      "type": "paragraph",
+      "text": "This component has been matched by the SliceZone. Its model has been fetched from vue-essential-slices.",
+      "spans": []
+    }]
+  }],
+  "primary": {
+    "eyebrow_headline": [{
+      "type": "paragraph",
+      "text": "Eyebrow",
+      "spans": []
+    }],
+    "title": [{
+      "type": "heading1",
+      "text": "Alternate like a star",
+      "spans": []
+    }],
+    "description": [{
+      "type": "paragraph",
+      "text": "A predesigned AlternateGrid component, that you can use to list your skills or features of a product.",
+      "spans": []
+    }],
+    "optional_image": {
+      "dimensions": {
+        "width": 1114,
+        "height": 1522
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.io/repoz/9aea6f86-1695-4ee9-9d34-335e020ed007_selfie2.png?auto=compress,format"
+    },
+    "image_side": "left"
+  }
+}

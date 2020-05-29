@@ -31,6 +31,7 @@
   "homepage": "https://github.com/prismicio/vue-essential-slices#readme",
   "devDependencies": {
     "@babel/core": "^7.9.6",
+    "@prismicio/vue": "^2.0.2",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.18",
@@ -46,7 +47,6 @@
     "pre-commit": "^1.2.2",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
-    "prismic-vue": "^2.0.0",
     "sass-loader": "^8.0.2",
     "sm-commons": "0.0.15-alpha.4",
     "vue": "^2.6.11",
