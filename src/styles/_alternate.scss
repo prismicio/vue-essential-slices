@@ -39,6 +39,11 @@
   margin-top: 1em;
 }
 
+.ps-alternate__module__img {
+  max-height: 48px;
+  margin-bottom: var(--c-margin);
+}
+
 @media all and (min-width: 40rem) {
   @supports (display: grid) {
     .ps-alternate--list {
