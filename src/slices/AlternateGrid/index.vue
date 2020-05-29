@@ -67,7 +67,6 @@ export default {
       return imageLeft ? 'span-1-5' : 'span-8-12'
     },
     secondColSpan({ slice, noImage, imageLeft, theme }) {
-      console.log(theme && theme.grid)
       if (theme && theme.grid && theme.grid.spans && theme.grid.spans.length > 1) {
         return `span-${theme.Grid.spans[1]}`
       }
