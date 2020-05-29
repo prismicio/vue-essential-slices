@@ -106,9 +106,6 @@ export const WithCustomTheme = () => ({
           item: {
             class: 'custom-class',
             style: 'background: #FFF; border: 1px solid #111;padding: 12px'
-          },
-          image: {
-            style: 'background: yellow'
           }
         }, {
           i: 0
