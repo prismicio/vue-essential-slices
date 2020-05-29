@@ -32,7 +32,7 @@ export default {
 }
 </script>
 ````
-If you've correctly setup a SliceMachine project and created a page of uid "homepage" on your Prismic writing room, your page should now render a full landing page. If you're unsure why or how this works, please refer to SliceMachien documentation or refer to the [sliceZone README](https://github.com/prismicio/sm-commons/tree/master/packages/vue-slicezone) ✌️
+If you've correctly setup a SliceMachine project and created a page of uid "homepage" on your Prismic writing room, your page should now render a full landing page. If you're unsure why or how this works, please refer to SliceMachine documentation or refer to the [sliceZone README](https://github.com/prismicio/sm-commons/tree/master/packages/vue-slicezone) ✌️
 
 ## Manual use
 
