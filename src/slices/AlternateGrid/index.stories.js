@@ -142,7 +142,7 @@ export const WithCustomSpans = () => ({
     theme: {
       default () {
         return formatThemeProps({
-          Grid: {
+          grid: {
             spans: ['1-2', '3-12']
           }
         })

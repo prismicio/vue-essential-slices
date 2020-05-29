@@ -61,14 +61,14 @@ export default {
       return slice.primary.image_side === 'left'
     },
     firstColSpan({ slice, noImage, imageLeft, theme }) {
-      if (theme && theme.Grid && theme.Grid.spans && theme.Grid.spans.length > 0) {
-        return `span-${theme.Grid.spans[0]}`
+      if (theme && theme.grid && theme.grid.spans && theme.grid.spans.length > 0) {
+        return `span-${theme.grid.spans[0]}`
       }
       return imageLeft ? 'span-1-5' : 'span-8-12'
     },
     secondColSpan({ slice, noImage, imageLeft, theme }) {
-      console.log(theme && theme.Grid)
-      if (theme && theme.Grid && theme.Grid.spans && theme.Grid.spans.length > 1) {
+      console.log(theme && theme.grid)
+      if (theme && theme.grid && theme.grid.spans && theme.grid.spans.length > 1) {
         return `span-${theme.Grid.spans[1]}`
       }
       if (noImage) {
