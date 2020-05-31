@@ -68,7 +68,7 @@ export default {
     },
     secondColSpan({ slice, noImage, imageLeft, theme }) {
       if (theme && theme.grid && theme.grid.spans && theme.grid.spans.length > 1) {
-        return `span-${theme.Grid.spans[1]}`
+        return `span-${theme.grid.spans[1]}`
       }
       if (noImage) {
         return 'span-1-10'
