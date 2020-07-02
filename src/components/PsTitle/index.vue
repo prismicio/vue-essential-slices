@@ -1,13 +1,9 @@
 <template>
-  <component
-    v-bind:is="'h2'"
-    v-if="$slots.default"
-    aria-level="2"
+  <prismic-rich-text
+    :field="field"
     :class="`ps__title ${classAttr ? classAttr : ''}`"
     :style="`${appliedColor ? `color: ${appliedColor};` : ''}${appliedAlign ? `text-align: ${appliedAlign}` : ''}`"
-  >
-    <slot></slot>
-  </component>
+  />
 </template>
 <script>
 import { commonProps, createComputedProps } from '../../utils'
@@ -16,6 +12,13 @@ export default {
   name: 'PsTitle',
   props: {
     theme: commonProps.theme,
+    field: {
+      type: Array,
+      required: true,
+      default() {
+        return []
+      }
+    },
     classAttr: {
       type: String,
       required: false,

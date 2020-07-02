@@ -17,25 +17,25 @@ export const Wip = () => ({
   template: `
   <ps-section>
   <div class="ps__wrap">
-    <div class="ps__head">
+    <div class="ps__head" style="max-width: 600px;text-align: left">
       <header class="ps__header">
         <ps-eyebrow align="left">
           Vue essential slices
         </ps-eyebrow>
-        <ps-title align="left">
-          Nicely made website sections,<br/> connected to a backend.
-        </ps-title>
+        <h1>
+          Nicely made website sections, connected to a backend.
+        <h1>
       </header>
-      <ps-description align="left">
+      <p style="font-size: 20px">
         This library is part of <a target="_blank" href="https://slicemachine.dev">SliceMachine</a>, a tool for component-based approach on both the front-end and the back-end.
-      </ps-description>
-      <ps-description align="left" style="margin-top: 1em">
+      </p>
+      <p style="font-size: 20px">
         The easiest way to get started is by following the Getting started <a target="_blank" href="https://www.slicemachine.dev/documentation/getting-started">here</a>
         but if you're more of an adventurer, create a fresh Nuxt project and run this command in your CLI:
-      </ps-description>
-      <ps-description align="left" style="background:#F7F7F7;margin-top:1em;padding: 12px">
+      </p>
+      <p style="font-size: 20px">
         $> npx prismic-cli sm --setup
-      </ps-description>
+      </p>
     </div>
   </div>
   </ps-section>

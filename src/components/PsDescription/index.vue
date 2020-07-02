@@ -1,13 +1,9 @@
 <template>
-  <div
-    v-if="$slots.default"
+  <prismic-rich-text
+    :field="field"
     :class="`ps__desc ${appliedAlign || ''} ${classAttr ? classAttr : ''}`"
     :style="theme.style || `${appliedColor ? `color: ${appliedColor};` : ''}${appliedBackground ? `background: ${appliedBackground}` : ''}`"
-  >
-    <p>
-      <slot></slot>
-    </p>
-  </div>
+  />
 </template>
 <script>
 import {
@@ -19,6 +15,13 @@ import {
 export default {
   name: 'PsDescription',
   props: {
+    field: {
+      type: Array,
+      required: true,
+      default() {
+        return []
+      }
+    },
     theme: commonProps.theme,
     classAttr: {
       type: String,

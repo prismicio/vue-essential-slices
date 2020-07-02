@@ -1,12 +1,13 @@
 {
   "name": "vue-essential-slices",
-  "version": "0.2.0",
+  "version": "0.1.3",
   "description": "A set of professionally made, accessible Vue components, linked to a (Prismic) backend",
   "main": "src/index.js",
   "scripts": {
     "dev": "start-storybook",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-storybook": "build-storybook",
+    "prepack": "yarn bundle",
     "bundle": "node ./node_modules/sm-commons/scripts/bundle",
     "storybook": "start-storybook -p 6006"
   },
@@ -48,7 +49,7 @@
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
     "sass-loader": "^8.0.2",
-    "sm-commons": "0.0.15-alpha.4",
+    "sm-commons": "^0.0.22",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4",
     "vue-loader": "^15.9.2",

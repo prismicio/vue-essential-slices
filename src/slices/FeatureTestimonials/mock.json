@@ -1,0 +1,235 @@
+{
+	"slice_type": "features_testimonials",
+	"slice_label": null,
+	"items": [{
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/74e96244-08dc-4253-ac73-cdcbfad04001_testimonial-logo-3.svg?auto=compress,format&rect=0,11,28,28&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Femke Van Schoohoven",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Creative Director at Netflix",
+			"spans": []
+		}]
+	}, {
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/edfeea23-bc22-433a-8208-1112d4a63899_testimonial-logo-1.svg?auto=compress,format&rect=0,1,46,46&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Femke Van Schoohoven",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Someone at Deliveroo",
+			"spans": []
+		}]
+	}, {
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/a40dff92-2344-49aa-948e-e3cd10c922bd_testimonial-logo-2.svg?auto=compress,format&rect=10,0,50,50&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Hay work at Docker",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Creative Director at Netflix",
+			"spans": []
+		}]
+	}, {
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/edfeea23-bc22-433a-8208-1112d4a63899_testimonial-logo-1.svg?auto=compress,format&rect=0,1,46,46&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Femke Van Schoohoven",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Creative Director at Netflix",
+			"spans": []
+		}]
+	}, {
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/a683c476-2898-4e20-908b-c9523e700648_testimonial-logo-4.svg?auto=compress,format&rect=0,1,48,48&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Femke Van Schoohoven",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Creative Director at Netflix",
+			"spans": []
+		}]
+	}, {
+		"client_logo": {
+			"dimensions": {
+				"width": 100,
+				"height": 100
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/da32a17b-fdb4-437e-a528-5aacd024736a_testimonial-logo-6.svg?auto=compress,format&rect=0,0,50,50&w=100&h=100"
+		},
+		"profile_pic": {
+			"dimensions": {
+				"width": 80,
+				"height": 80
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/nuxt-sm-app-example-9/3e808742-9253-4979-a2f8-791bc2054ab5_progile-pic.jpg?auto=compress,format&rect=0,0,416,416&w=80&h=80"
+		},
+		"quote": [{
+			"type": "paragraph",
+			"text": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat risus id tristique tincidunt.”",
+			"spans": []
+		}],
+		"name": [{
+			"type": "paragraph",
+			"text": "Femke Van Schoohoven",
+			"spans": []
+		}],
+		"role_position": [{
+			"type": "paragraph",
+			"text": "Creative Director at Netflix",
+			"spans": []
+		}]
+	}],
+	"primary": {
+		"eyebrow_headline": [{
+			"type": "paragraph",
+			"text": "Testimonials",
+			"spans": []
+		}],
+		"title": [{
+			"type": "heading2",
+			"text": "It's more than a budget manager",
+			"spans": []
+		}],
+		"description": [{
+			"type": "paragraph",
+			"text": "Learn about Prismic by reading questions and answers. It’s almost like talking to a human – and maybe even better.",
+			"spans": []
+		}],
+		"feature_illustration": {
+			"dimensions": {
+				"width": 2048,
+				"height": 1536
+			},
+			"alt": null,
+			"copyright": null,
+			"url": "https://images.prismic.io/slicemachine-blank/26d81419-4d65-46b8-853e-8ea902e160c1_groovy.png?auto=compress,format"
+		}
+	}
+}

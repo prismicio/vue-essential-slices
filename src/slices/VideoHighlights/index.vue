@@ -10,13 +10,9 @@
 					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
 					</ps-eyebrow>
-					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
-						{{ $prismic.asText(slice.primary.title) }}
-					</ps-title>
+					<ps-title :field="slice.primary.title" :theme="theme.title" :align="theme.align" :color="theme.color" />
 				</header>
-				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
-					{{ $prismic.asText(slice.primary.description) }}
-				</ps-description>
+				<ps-description :field="slice.primary.description" :theme="theme.description" :align="theme.align" :color="theme.color" />
 			</div>
 			<div class="ps__main" v-if="dataItems.length">
 				<div :id="currId" class="ps__video-player" data-video-player>
