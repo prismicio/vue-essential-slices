@@ -9,13 +9,9 @@
 					<ps-eyebrow :theme="theme.eyebrow" :align="theme.align" :color="theme.color">
 						{{ $prismic.asText(slice.primary.eyebrow_headline) }}
 					</ps-eyebrow>
-					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
-						{{ $prismic.asText(slice.primary.title) }}
-					</ps-title>
+					<ps-title :theme="theme.title" :align="theme.align" :color="theme.color" :field="slice.primary.title" />
 				</header>
-				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
-					{{ $prismic.asText(slice.primary.description) }}
-				</ps-description>
+				<ps-description :field="slice.primary.description" :theme="theme.description" :align="theme.align" :color="theme.color" />
 			</div>
 			<div v-if="slice.items.length" class="ps__main grid grid--12">
 				<div class="span-1-12">
@@ -32,6 +28,7 @@
 								<div>
 									<prismic-rich-text class="c-carousel__card__title" :field="item.title" />
 									<prismic-rich-text class="c-carousel__card__content" :field="item.content" />
+									<prismic-rich-text class="c-carousel__card__content" :field="item.additional_info" />
 								</div>
 							</div>
 						</template>
@@ -150,7 +147,7 @@ export default {
 .c-carousel__card__title > h1,
 h2,
 h3 {
-	font-size: 1rem;
+	font-size: inherit;
 	margin-bottom: 1em;
 }
 

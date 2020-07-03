@@ -14,14 +14,10 @@
 							class="ps__kicker-icon"
 							:field="slice.primary.icon_image"
 						/>
-						<ps-title :theme="theme.title" :align="theme.align" :color="theme.color">
-							{{ $prismic.asText(slice.primary.title) }}
-						</ps-title>
+						<ps-title :field="slice.primary.title" :theme="theme.title" :align="theme.align" :color="theme.color" />
 					</slot>
 				</header>
-				<ps-description :theme="theme.description" :align="theme.align" :color="theme.color">
-					{{ $prismic.asText(slice.primary.paragraph) }}
-				</ps-description>
+				<ps-description :field="slice.primary.paragraph" :theme="theme.description" :align="theme.align" :color="theme.color" />
 				<slot name="cta" v-bind="slice.primary">
 					<ps-button
 						:theme="theme.button"

@@ -49,9 +49,12 @@
 }
 
 .ps__title {
-  margin-bottom: 0;
 
   @extend .text--4xl;
+}
+
+.ps__title > * {
+  margin-bottom: 0;
 }
 
 .ps__desc {
