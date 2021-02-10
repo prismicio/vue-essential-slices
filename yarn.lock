@@ -9066,10 +9066,10 @@ slash@^2.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
   integrity sha512-ZYKh3Wh2z1PpEXWr0MpSBZ0V6mZHAQfYevttO11c51CaWjGTaadiKZ+wVt1PbMlDV5qhMFslpZCemhwOK7C89A==
 
-sm-commons@^0.0.22:
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/sm-commons/-/sm-commons-0.0.22.tgz#5027b50b23964c74ed3eda150fd58c39e44ac7b0"
-  integrity sha512-IegMnwAhb1C8dcEE/qx9rQqjkzyrlnbyIPhhyywwUlp/IAOrYuEXTIvJbym0hteRac6Zx0FRg3GO7w23SXhq1Q==
+sm-commons@^0.0.23:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/sm-commons/-/sm-commons-0.0.23.tgz#d0ff155e82802c3e9750025e0f8b9c4d8012fa2b"
+  integrity sha512-HHONLWHUTnLnuBUld0Ki8ToZV69rD0UtjbKBsf0WM5my4ASbyJeV9cVuzQUcDPWA8vt9XnVgS4AkWcitJ4LAKg==
   dependencies:
     consola "^2.11.3"
     deepmerge "^4.2.2"
