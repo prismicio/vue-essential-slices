@@ -203,7 +203,7 @@ Everytime you publish your library on NPM, Prismic servers download your library
 npm i --save-dev sm-commons
 ````
 
-Then, add this script line to your package.json file (subject to change because I don't know how to make it appear as a bin script 😭) :
+Then, add this script line to your package.json file :
 
 ```json
 "scripts": {
