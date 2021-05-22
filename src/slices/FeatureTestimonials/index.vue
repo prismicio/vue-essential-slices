@@ -73,6 +73,7 @@ import {
 import { commonProps } from '../../utils'
 
 export default {
+  name: 'FeatureTestimonials',
 	components: {
 		PsEyebrow,
 		PsDescription,

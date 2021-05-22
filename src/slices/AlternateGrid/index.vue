@@ -42,6 +42,7 @@ import {
 import { commonProps } from '../../utils' 
 
 export default {
+  name: 'AlternateGrid',
   props: commonProps,
   components: {
 		PsEyebrow,
