@@ -44,7 +44,7 @@
     "@vue/component-compiler-utils": "^3.1.1",
     "babel-loader": "^8.0.6",
     "babel-preset-vue": "^2.0.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "pre-commit": "^1.2.2",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
